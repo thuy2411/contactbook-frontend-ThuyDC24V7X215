@@ -1,0 +1,30 @@
+<script>
+export default {
+  props: {
+    contacts: { type: Array, default: [] },
+    activeIndex: { type: Number, default: -1 },
+  },
+  emits: ["update:activeIndex"],
+  methods: {
+    updateActiveIndex(index) {
+      this.$emit("update:activeIndex", index);
+    },
+  },
+};
+</script>
+<template>
+  <div class="contact-list-wrap">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        v-for="(contact, index) in contacts"
+        :key="contact._id"
+        :class="{ active: index === activeIndex }"
+        @click="updateActiveIndex(index)"
+      >
+        <div class="name">{{ contact.name }}</div>
+        <div class="meta" v-if="contact.email">{{ contact.email }}</div>
+      </li>
+    </ul>
+  </div>
+</template>
