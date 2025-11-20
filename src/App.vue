@@ -15,4 +15,7 @@ export default {
   </div>
 </template>
 <style>
+.container-page .page{
+    width: 300px;
+}
 </style>

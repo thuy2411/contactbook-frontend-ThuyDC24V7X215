@@ -41,6 +41,16 @@
           <i class="fas fa-address-card"></i>
         </h4>
         <ContactCard :contact="activeContact" />
+        <router-link
+          :to="{
+            name: 'contact.edit',
+            params: { id: activeContact._id },
+          }"
+        >
+          <span class="mt-2 badge badge-warning">
+            <i class="fas fa-edit"></i> Hiệu chỉnh</span
+          >
+        </router-link>
       </div>
       <div v-else class="placeholder muted">
         Chọn một liên hệ để xem chi tiết
@@ -169,7 +179,9 @@ export default {
   gap: 0.5rem;
   margin-bottom: 0.6rem;
 }
-.muted { color: rgba(0,0,0,0.55); }
+.muted {
+  color: rgba(0, 0, 0, 0.55);
+}
 
 @media (max-width: 1024px) {
   .page {

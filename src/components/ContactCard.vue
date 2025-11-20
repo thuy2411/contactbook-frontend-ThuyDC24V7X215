@@ -12,8 +12,5 @@ export default {
     <div class="field"><div class="label">Địa chỉ:</div><div class="value">{{ contact.address }}</div></div>
     <div class="field"><div class="label">Điện thoại:</div><div class="value">{{ contact.phone }}</div></div>
     <div class="field"><div class="label">Liên hệ yêu thích:</div><div class="value"> <i v-if="contact.favorite" class="fas fa-check"></i><i v-else class="fas fa-times"></i></div></div>
-    <div style="margin-top:10px">
-      <button class="edit-btn" @click="$emit('edit', contact)"><i class="fas fa-edit"></i> Hiệu chỉnh</button>
-    </div>
   </div>
 </template>
